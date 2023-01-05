@@ -6,7 +6,7 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:39:30 by brumarti          #+#    #+#             */
-/*   Updated: 2022/12/16 18:01:15 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/05 17:18:21 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,5 @@ void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
 
-void	short_stack(t_stack *a);
-void	find_and_set(t_stack *a, t_stack *b);
-
+void	quick_sort(t_stack *a, t_stack *b);
 #endif

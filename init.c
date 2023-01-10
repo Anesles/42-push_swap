@@ -6,7 +6,7 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 14:52:45 by brumarti          #+#    #+#             */
-/*   Updated: 2022/12/16 17:13:50 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/10 16:01:22 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,16 @@ void	print_stacks(t_stack a, t_stack b)
 	int	i;
 
 	i = 0;
-	while (a.list[i] || b.list[i])
+	while (i < a.stack_size || i < b.stack_size)
 	{
-		if (a.list[i])
+		if (i < a.stack_size)
 			ft_printf("%d ", a.list[i]);
 		else
 			ft_printf("  ");
-		if (b.list[i])
+		if (i < b.stack_size)
 			ft_printf("%d\n", b.list[i]);
 		else
-			ft_printf("\n");
+			ft_printf(" \n");
 		i++;
 	}
 	ft_printf("_ _\na b\n\n");

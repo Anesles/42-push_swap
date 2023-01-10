@@ -6,7 +6,7 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 15:05:39 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/05 17:14:44 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/10 16:13:45 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sa(t_stack *a)
 {
 	int	temp;
 
-	if (a->list[0] && a->list[1])
+	if (a->stack_size >= 2)
 	{
 		temp = a->list[0];
 		a->list[0] = a->list[1];
@@ -29,7 +29,7 @@ void	sb(t_stack *b)
 {
 	int	temp;
 
-	if (b->list[0] && b->list[1])
+	if (b->stack_size >= 2)
 	{
 		temp = b->list[0];
 		b->list[0] = b->list[1];

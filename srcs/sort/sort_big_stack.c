@@ -6,7 +6,7 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 15:24:18 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/11 17:12:41 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/11 17:14:18 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,5 @@ void	radix_sort(t_stack *a, t_stack *b)
 void	sort_big_stack(t_stack *a, t_stack *b)
 {
 	simplify_stack(a);
-	print_stacks(*a, *b);
 	radix_sort(a, b);
-	print_stacks(*a, *b);
 }

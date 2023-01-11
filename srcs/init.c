@@ -6,7 +6,7 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 14:52:45 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/11 15:41:21 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/11 17:13:56 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,24 +33,4 @@ void	init(int argc, char **argv, t_stack	*a, t_stack	*b)
 		}
 		i++;
 	}
-}
-
-void	print_stacks(t_stack a, t_stack b)
-{
-	int	i;
-
-	i = 0;
-	while (i < a.stack_size || i < b.stack_size)
-	{
-		if (i < a.stack_size)
-			ft_printf("%d ", a.list[i]);
-		else
-			ft_printf("  ");
-		if (i < b.stack_size)
-			ft_printf("%d\n", b.list[i]);
-		else
-			ft_printf(" \n");
-		i++;
-	}
-	ft_printf("_ _\na b\n\n");
 }

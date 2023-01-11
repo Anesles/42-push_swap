@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   find_min.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 18:11:12 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/11 15:55:06 by brumarti         ###   ########.fr       */
+/*   Created: 2023/01/11 16:43:44 by brumarti          #+#    #+#             */
+/*   Updated: 2023/01/11 16:45:23 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/push_swap.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	find_min(t_stack *a)
 {
-	unsigned char		*p;
-	const unsigned char	*t;
+	int	min;
+	int	i;
 
-	if (!dest && !src)
-		return (0);
-	p = dest;
-	t = src;
-	while (n--)
+	i = 0;
+	min = a->list[0];
+	while (i < a->stack_size)
 	{
-		*p = *t;
-		p++;
-		t++;
+		if (min > a->list[i])
+			min = a->list[i];
+		i++;
 	}
-	return (dest);
+	return (min);
 }

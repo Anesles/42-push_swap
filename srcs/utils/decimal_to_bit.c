@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   decimal_to_bit.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 18:11:12 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/11 15:55:06 by brumarti         ###   ########.fr       */
+/*   Created: 2023/01/11 16:58:02 by brumarti          #+#    #+#             */
+/*   Updated: 2023/01/11 16:59:27 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/push_swap.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	decimal_to_bit(int decimal)
 {
-	unsigned char		*p;
-	const unsigned char	*t;
+	int	binary;
+	int	i;
 
-	if (!dest && !src)
-		return (0);
-	p = dest;
-	t = src;
-	while (n--)
+	i = 1;
+	binary = 0;
+	while (decimal > 0)
 	{
-		*p = *t;
-		p++;
-		t++;
+		binary += (decimal & 1) * i;
+		decimal = decimal >> 1;
+		i *= 10;
 	}
-	return (dest);
+	return (binary);
 }

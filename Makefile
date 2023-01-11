@@ -6,7 +6,7 @@
 #    By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 15:49:17 by brumarti          #+#    #+#              #
-#    Updated: 2023/01/11 15:42:05 by brumarti         ###   ########.fr        #
+#    Updated: 2023/01/11 17:00:01 by brumarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,11 +22,13 @@ LIBFTNAME = libft.a
 
 SRC = main.c srcs/init.c
 
+UTILS = srcs/utils/find_min.c srcs/utils/find_max.c srcs/utils/decimal_to_bit.c
+
 OPER = srcs/oper/oper.c srcs/oper/oper2.c srcs/oper/oper3.c
 
 ALGO = srcs/sort/sort_small_stack.c srcs/sort/sort_big_stack.c
 
-OBJ = $(SRC:.c=.o) $(OPER:.c=.o) $(ALGO:.c=.o)
+OBJ = $(SRC:.c=.o) $(OPER:.c=.o) $(ALGO:.c=.o) $(UTILS:.c=.o)
 
 all: $(NAME)
 

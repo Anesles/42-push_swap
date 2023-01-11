@@ -6,14 +6,14 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:39:30 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/10 16:02:45 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/11 15:42:19 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "../libft/libft.h"
 
 typedef struct s_stack
 {
@@ -37,5 +37,6 @@ void	rrr(t_stack *a, t_stack *b);
 //Sort
 void	sort_small_stack(t_stack *a, t_stack *b);
 int		check_sorted(t_stack *a);
+void	sort_big_stack(t_stack *a, t_stack *b);
 
 #endif

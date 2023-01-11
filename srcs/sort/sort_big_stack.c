@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   oper3.c                                            :+:      :+:    :+:   */
+/*   sort_big_stack.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/16 15:38:29 by brumarti          #+#    #+#             */
-/*   Updated: 2022/12/16 17:10:58 by brumarti         ###   ########.fr       */
+/*   Created: 2023/01/11 15:24:18 by brumarti          #+#    #+#             */
+/*   Updated: 2023/01/11 15:41:06 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../includes/push_swap.h"
 
-void	rrr(t_stack *a, t_stack *b)
+void	simplify_stack(t_stack *a)
 {
-	rra(a);
-	rrb(b);
+	
+}
+
+void	sort_big_stack(t_stack *a, t_stack *b)
+{
+	simplify_stack(a);
+	print_stacks(*a, *b);
 }

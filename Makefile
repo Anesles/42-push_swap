@@ -6,7 +6,7 @@
 #    By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 15:49:17 by brumarti          #+#    #+#              #
-#    Updated: 2023/01/10 15:33:06 by brumarti         ###   ########.fr        #
+#    Updated: 2023/01/11 15:42:05 by brumarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,11 @@ LIBFTPATH = ./libft/
 
 LIBFTNAME = libft.a
 
-SRC = main.c init.c 
+SRC = main.c srcs/init.c
 
-OPER = oper/oper.c oper/oper2.c oper/oper3.c
+OPER = srcs/oper/oper.c srcs/oper/oper2.c srcs/oper/oper3.c
 
-ALGO = sort/sort_small_stack.c
+ALGO = srcs/sort/sort_small_stack.c srcs/sort/sort_big_stack.c
 
 OBJ = $(SRC:.c=.o) $(OPER:.c=.o) $(ALGO:.c=.o)
 

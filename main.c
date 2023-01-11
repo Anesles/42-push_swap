@@ -6,11 +6,11 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:38:57 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/10 16:33:21 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/11 15:39:47 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "./includes/push_swap.h"
 
 int	check_sorted(t_stack *a)
 {
@@ -38,7 +38,8 @@ int	main(int argc, char *argv[])
 			return (0);
 		if (a.stack_size <= 5)
 			sort_small_stack(&a, &b);
-		print_stacks(a, b);
+		else
+			sort_big_stack(&a, &b);
 	}
 	return (0);
 }

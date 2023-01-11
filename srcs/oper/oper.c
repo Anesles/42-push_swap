@@ -6,11 +6,11 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 15:05:39 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/10 16:13:45 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/11 15:40:24 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	sa(t_stack *a)
 {

@@ -6,11 +6,11 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 14:52:45 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/10 16:01:22 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/11 15:41:21 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	init(int argc, char **argv, t_stack	*a, t_stack	*b)
 {

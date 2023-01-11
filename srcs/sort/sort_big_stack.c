@@ -6,20 +6,36 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 15:24:18 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/11 17:14:18 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/11 21:11:12 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
+int	*used_index(t_stack *a)
+{
+	int	*u_i;
+	int	i;
+
+	i = 0;
+	u_i = malloc(sizeof(int) * a->stack_size);
+	while (i < a->stack_size)
+	{
+		u_i[i] = 0;
+		i++;
+	}
+	return (u_i);
+}
+
 void	simplify_stack(t_stack *a)
 {
 	int	min;
 	int	max;
+	int	*u_i;
 	int	i;
 	int	j;
 
-	i = 0;
+	u_i = used_index(a);
 	min = find_min(a);
 	max = find_max(a);
 	j = 0;
@@ -28,10 +44,10 @@ void	simplify_stack(t_stack *a)
 		i = 0;
 		while (i < a->stack_size)
 		{
-			if (a->list[i] == min)
+			if (a->list[i] == min && u_i[i] == 0)
 			{
-				a->list[i] = decimal_to_bit(j);
-				j++;
+				u_i[i] = 1;
+				a->list[i] = decimal_to_bit(j++);
 				break ;
 			}
 			i++;
@@ -40,14 +56,19 @@ void	simplify_stack(t_stack *a)
 	}
 }
 
-int	get_max_bits(int max_num)
+int	nth_digit(int num, int n)
 {
-	int	max_bits;
+	int	digit;
+	int	i;
 
-	max_bits = 0;
-	while ((max_num >> max_bits) != 0)
-		max_bits++;
-	return (max_bits);
+	i = 1;
+	while (i < n)
+	{
+		num /= 10;
+		i++;
+	}
+	digit = num % 10;
+	return (digit);
 }
 
 void	radix_sort(t_stack *a, t_stack *b)
@@ -59,13 +80,13 @@ void	radix_sort(t_stack *a, t_stack *b)
 
 	max_bits = get_max_bits(a->stack_size - 1);
 	size = a->stack_size;
-	i = 0;
-	while (i < max_bits)
+	i = 1;
+	while (i < max_bits + 1)
 	{
 		j = 0;
 		while (j < size)
 		{
-			if (((a->list[0] >> i) & 1) == 1)
+			if (get_digits(a->list[0]) >= i && nth_digit(a->list[0], i))
 				ra(a);
 			else
 				pb(a, b);

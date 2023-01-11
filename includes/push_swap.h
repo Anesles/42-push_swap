@@ -6,7 +6,7 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:39:30 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/11 16:58:26 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/11 19:20:10 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ void	sort_big_stack(t_stack *a, t_stack *b);
 int		find_min(t_stack *a);
 int		find_max(t_stack *a);
 int		decimal_to_bit(int decimal);
+int		get_digits(int n);
+int		get_max_bits(int max_num);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 15:49:17 by brumarti          #+#    #+#              #
-#    Updated: 2023/01/11 17:00:01 by brumarti         ###   ########.fr        #
+#    Updated: 2023/01/11 19:20:43 by brumarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ LIBFTNAME = libft.a
 
 SRC = main.c srcs/init.c
 
-UTILS = srcs/utils/find_min.c srcs/utils/find_max.c srcs/utils/decimal_to_bit.c
+UTILS = srcs/utils/find_min.c srcs/utils/find_max.c srcs/utils/decimal_to_bit.c srcs/utils/get_digits.c srcs/utils/get_max_bits.c
 
 OPER = srcs/oper/oper.c srcs/oper/oper2.c srcs/oper/oper3.c
 

@@ -6,7 +6,7 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 15:18:19 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/11 17:17:10 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/11 17:24:28 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,27 @@ int	find_position(t_stack *a, int n)
 	return (i);
 }
 
+void	cont_sort(t_stack *a, t_stack *b, int index)
+{
+	if (index == 3)
+	{
+		pa(a, b);
+		if (a->stack_size == 5)
+		{
+			rra(a);
+			sa(a);
+		}
+		ra(a);
+		if (a->stack_size == 5)
+			ra(a);
+	}
+	else if (index == 4)
+	{
+		pa(a, b);
+		ra(a);
+	}
+}
+
 void	sort_position(t_stack *a, t_stack *b, int index)
 {
 	if (index == 0)
@@ -76,27 +97,6 @@ void	sort_position(t_stack *a, t_stack *b, int index)
 	}
 	else if (index >= 3)
 		cont_sort(a, b, index);
-}
-
-void	cont_sort(t_stack *a, t_stack *b, int index)
-{
-	if (index == 3)
-	{
-		pa(a, b);
-		if (a->stack_size == 5)
-		{
-			rra(a);
-			sa(a);
-		}
-		ra(a);
-		if (a->stack_size == 5)
-			ra(a);
-	}
-	else if (index == 4)
-	{
-		pa(a, b);
-		ra(a);
-	}
 }
 
 void	sort_small_stack(t_stack *a, t_stack *b)

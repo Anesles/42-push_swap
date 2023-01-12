@@ -6,7 +6,7 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 15:24:18 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/11 21:11:12 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/12 16:04:47 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void	simplify_stack(t_stack *a)
 	j = 0;
 	while (min <= max)
 	{
-		i = 0;
-		while (i < a->stack_size)
+		i = -1;
+		while (++i < a->stack_size)
 		{
 			if (a->list[i] == min && u_i[i] == 0)
 			{
@@ -50,10 +50,10 @@ void	simplify_stack(t_stack *a)
 				a->list[i] = decimal_to_bit(j++);
 				break ;
 			}
-			i++;
 		}
 		min++;
 	}
+	free(u_i);
 }
 
 int	nth_digit(int num, int n)

@@ -6,7 +6,7 @@
 #    By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 15:49:17 by brumarti          #+#    #+#              #
-#    Updated: 2023/01/11 19:20:43 by brumarti         ###   ########.fr        #
+#    Updated: 2023/01/12 16:33:32 by brumarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,3 +44,5 @@ fclean: clean
 	rm -f $(LIBFTPATH)$(LIBFTNAME) $(NAME)
 
 re: fclean all
+
+.SILENT:

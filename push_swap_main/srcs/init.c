@@ -6,11 +6,34 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 14:52:45 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/11 17:28:00 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/17 16:38:56 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	check_duplicates(int *list, int index)
+{
+	int	i;
+
+	i = 0;
+	while (i < index)
+	{
+		if (list[i] == list[index])
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	check_overflow(int index, char **argv, int *list)
+{
+	if (argv[index + 1][0] == '-' && list[index] >= 0)
+		return (1);
+	else if (ft_isdigit(argv[index + 1][0]) && list[index] < 0)
+		return (1);
+	return (0);
+}
 
 void	init(int argc, char **argv, t_stack	*a, t_stack	*b)
 {
@@ -23,13 +46,19 @@ void	init(int argc, char **argv, t_stack	*a, t_stack	*b)
 	b->stack_size = 0;
 	while (i < argc - 1)
 	{
-		if (ft_isdigit(argv[i + 1][0]))
+		if ((ft_isdigit(argv[i + 1][0])) \
+		|| (argv[i + 1][0] == '-' && ft_isdigit(argv[i + 1][1])))
+		{
 			a->list[i] = ft_atoi(argv[i + 1]);
+			if (check_duplicates(a->list, i) \
+			|| check_overflow(i, argv, a->list))
+				send_error("");
+		}
 		else
 		{
 			free(a->list);
 			free(b->list);
-			send_error("Not a number");
+			send_error("");
 		}
 		i++;
 	}

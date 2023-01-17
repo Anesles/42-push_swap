@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 15:39:30 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/17 18:06:29 by brumarti         ###   ########.fr       */
+/*   Created: 2023/01/17 17:44:48 by brumarti          #+#    #+#             */
+/*   Updated: 2023/01/17 18:06:16 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef CHECKER_H
+# define CHECKER_H
 
-# include "../libft/libft.h"
+# include "../../libft/libft.h"
 
 typedef struct s_stack
 {
@@ -22,7 +22,6 @@ typedef struct s_stack
 }	t_stack;
 
 void	init(int argc, char **argv, t_stack *a, t_stack	*b);
-void	print_stacks(t_stack a, t_stack b);
 //Operations
 void	sa(t_stack *a);
 void	sb(t_stack *b);
@@ -36,14 +35,6 @@ void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
 //Sort
-void	sort_small_stack(t_stack *a, t_stack *b);
 int		check_sorted(t_stack *a);
-void	sort_big_stack(t_stack *a, t_stack *b);
-//Utils
-int		find_min(t_stack *a);
-int		find_max(t_stack *a);
-int		decimal_to_bit(int decimal);
-int		get_digits(int n);
-int		get_max_bits(int max_num);
 
 #endif

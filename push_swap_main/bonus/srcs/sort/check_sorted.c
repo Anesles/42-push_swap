@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_sorted.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 15:38:57 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/17 17:51:36 by brumarti         ###   ########.fr       */
+/*   Created: 2023/01/17 17:49:35 by brumarti          #+#    #+#             */
+/*   Updated: 2023/01/17 17:49:53 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/push_swap.h"
+#include "../../includes/checker.h"
 
 int	check_sorted(t_stack *a)
 {
@@ -24,33 +24,4 @@ int	check_sorted(t_stack *a)
 		i++;
 	}
 	return (1);
-}
-
-int	main(int argc, char *argv[])
-{
-	t_stack	a;
-	t_stack	b;
-
-	if (argc > 1)
-	{
-		init(argc, argv, &a, &b);
-		if (check_sorted(&a))
-		{
-			free(a.list);
-			free(b.list);
-			exit(EXIT_SUCCESS);
-		}
-		if (a.stack_size <= 5)
-			sort_small_stack(&a, &b);
-		else
-			sort_big_stack(&a, &b);
-		free(a.list);
-		free(b.list);
-	}
-	else
-	{
-		send_error("");
-		return (EXIT_FAILURE);
-	}
-	return (EXIT_SUCCESS);
 }

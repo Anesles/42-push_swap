@@ -6,7 +6,7 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 17:44:48 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/17 18:06:16 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:27:15 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_stack
 }	t_stack;
 
 void	init(int argc, char **argv, t_stack *a, t_stack	*b);
+void	print_stacks(t_stack a, t_stack b);
 //Operations
 void	sa(t_stack *a);
 void	sb(t_stack *b);

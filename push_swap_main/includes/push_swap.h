@@ -6,7 +6,7 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:39:30 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/17 18:06:29 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/24 15:08:59 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	rrr(t_stack *a, t_stack *b);
 void	sort_small_stack(t_stack *a, t_stack *b);
 int		check_sorted(t_stack *a);
 void	sort_big_stack(t_stack *a, t_stack *b);
+void	special_case(t_stack *a, t_stack *b, int index);
 //Utils
 int		find_min(t_stack *a);
 int		find_max(t_stack *a);

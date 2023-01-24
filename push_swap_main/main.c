@@ -6,7 +6,7 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:38:57 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/17 17:51:36 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/24 15:45:35 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,6 @@ int	main(int argc, char *argv[])
 		free(b.list);
 	}
 	else
-	{
-		send_error("");
 		return (EXIT_FAILURE);
-	}
 	return (EXIT_SUCCESS);
 }

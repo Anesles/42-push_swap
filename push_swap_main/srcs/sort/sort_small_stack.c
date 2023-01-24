@@ -6,7 +6,7 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 15:18:19 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/11 17:24:28 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/24 15:15:34 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,21 +108,22 @@ void	sort_small_stack(t_stack *a, t_stack *b)
 		sa(a);
 	else if (a->stack_size == 3)
 		sort_3(a);
-	else if (a->stack_size == 4)
-	{
-		pb(a, b);
-		sort_3(a);
-		index = find_position(a, b->list[0]);
-		sort_position(a, b, index);
-	}
 	else
 	{
 		pb(a, b);
-		pb(a, b);
+		if (a->stack_size == 4)
+			pb(a, b);
 		sort_3(a);
-		index = find_position(a, b->list[0]);
-		sort_position(a, b, index);
-		index = find_position(a, b->list[0]);
-		sort_position(a, b, index);
+		if (b->stack_size == 2 && \
+			(find_position(a, b->list[0]) == find_position(a, b->list[1])))
+		{
+			special_case(a, b, find_position(a, b->list[0]));
+			return ;
+		}
+		while (a->stack_size != 5)
+		{
+			index = find_position(a, b->list[0]);
+			sort_position(a, b, index);
+		}
 	}
 }

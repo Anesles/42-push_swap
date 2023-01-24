@@ -6,7 +6,7 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 18:20:44 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/17 16:00:43 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/24 16:54:40 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 void	send_error(char *msg)
 {
-	write(2, "Error\n", 6);
-	write(2, msg, ft_strlen(msg));
+	write(STDERR_FILENO, "Error\n", 6);
 	if (msg)
-		write(2, "\n", 1);
+	{
+		write(STDERR_FILENO, msg, ft_strlen(msg));
+		write(STDERR_FILENO, "\n", 1);
+	}
 	exit(EXIT_FAILURE);
 }

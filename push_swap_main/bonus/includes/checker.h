@@ -6,7 +6,7 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 17:44:48 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/17 18:27:15 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/25 14:51:20 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
 //Sort
 int		check_sorted(t_stack *a);
+//Utils
+void	free_stacks(t_stack *a, t_stack *b, char *msg);
 
 #endif

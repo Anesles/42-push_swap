@@ -6,7 +6,7 @@
 #    By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 15:49:17 by brumarti          #+#    #+#              #
-#    Updated: 2023/01/25 14:30:22 by brumarti         ###   ########.fr        #
+#    Updated: 2023/01/25 14:51:47 by brumarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ BONUS_SRC = bonus/main.c \
 				bonus/srcs/oper/oper.c \
 				bonus/srcs/oper/oper2.c \
 				bonus/srcs/oper/oper3.c \
+				bonus/srcs/utils/free_stacks.c
 
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 

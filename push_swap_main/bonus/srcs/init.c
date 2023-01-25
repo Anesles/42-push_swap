@@ -6,11 +6,11 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 14:52:45 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/25 14:47:17 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/25 14:50:39 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../includes/checker.h"
 
 int	check_duplicates(int *list, int index)
 {

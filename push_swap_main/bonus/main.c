@@ -6,11 +6,17 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 17:22:20 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/17 18:28:05 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/25 15:09:53 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/checker.h"
+
+void	error_msg(char *msg, int len, int out)
+{
+	write(STDOUT_FILENO, msg, len);
+	exit(out);
+}
 
 void	execute_instruction(char *inst, t_stack *a, t_stack *b)
 {
@@ -36,6 +42,8 @@ void	execute_instruction(char *inst, t_stack *a, t_stack *b)
 		rrb(b);
 	else if (!ft_strncmp(inst, "rrr\n", 4))
 		rrr(a, b);
+	else
+		send_error("");
 }
 
 int	main(int argc, char **argv)
@@ -44,23 +52,22 @@ int	main(int argc, char **argv)
 	t_stack	b;
 	char	*instruction;
 
-	init(argc, argv, &a, &b);
-	instruction = get_next_line(STDIN_FILENO);
-	while (instruction)
+	instruction = NULL;
+	if (argc > 1)
 	{
-		execute_instruction(instruction, &a, &b);
+		init(argc, argv, &a, &b);
+		while (1)
+		{
+			instruction = get_next_line(STDIN_FILENO);
+			if (instruction == NULL)
+				break ;
+			execute_instruction(instruction, &a, &b);
+			free(instruction);
+		}
 		free(instruction);
-		instruction = get_next_line(STDIN_FILENO);
-	}
-	free(instruction);
-	if (!check_sorted(&a))
-	{
-		write(STDOUT_FILENO, "KO\n", 3);
-		exit(EXIT_FAILURE);
-	}
-	else
-	{
-		write(STDOUT_FILENO, "OK\n", 3);
-		exit(EXIT_SUCCESS);
+		if (!check_sorted(&a))
+			error_msg("KO\n", 3, EXIT_FAILURE);
+		else
+			error_msg("OK\n", 3, EXIT_SUCCESS);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 14:52:45 by brumarti          #+#    #+#             */
-/*   Updated: 2023/01/25 14:50:39 by brumarti         ###   ########.fr       */
+/*   Updated: 2023/01/26 15:57:02 by brumarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	check_valid(char *str)
 	{
 		if (i == 0)
 		{
-			if (i != '-' && !ft_isdigit(str[i]))
+			if (str[i] != '-' && !ft_isdigit(str[i]))
 				return (0);
 		}
 		else if (!ft_isdigit(str[i]))

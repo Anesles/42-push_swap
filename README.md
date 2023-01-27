@@ -1,5 +1,5 @@
 # **push_swap (Cursus from 42 Porto)**
-## **Grade: WIP**
+## **Grade: 84/100**
 ---
 ### **Summary:**
 

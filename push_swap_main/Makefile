@@ -6,7 +6,7 @@
 #    By: brumarti <brumarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 15:49:17 by brumarti          #+#    #+#              #
-#    Updated: 2023/01/24 15:30:16 by brumarti         ###   ########.fr        #
+#    Updated: 2023/01/25 14:51:47 by brumarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ SRC = main.c \
 		srcs/oper/oper3.c \
 		srcs/sort/sort_small_stack.c \
 		srcs/sort/sort_big_stack.c \
-		srcs/sort/special_case.c
+		srcs/sort/special_case.c \
+		srcs/utils/free_stacks.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -46,6 +47,7 @@ BONUS_SRC = bonus/main.c \
 				bonus/srcs/oper/oper.c \
 				bonus/srcs/oper/oper2.c \
 				bonus/srcs/oper/oper3.c \
+				bonus/srcs/utils/free_stacks.c
 
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
